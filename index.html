@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
     <meta charset="UTF-8" />
-    <title>Lev2Euro – BGN ⇄ EUR Converter</title>
+    <title>Lev2Euro – Конвертор BGN ⇄ EUR</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Link external CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,30 +12,29 @@
 
 <div class="card">
     <h1>Lev2Euro</h1>
-    <div class="subtitle">BGN ⇄ EUR Converter</div>
+    <div class="subtitle">Конвертор Лев ⇄ Евро</div>
 
-    <!-- FORM = Enter key works -->
     <form id="converterForm">
         <input
             id="amount"
             type="number"
             step="0.01"
-            placeholder="Enter amount"
+            placeholder="Въведете сума"
             required
         />
 
         <select id="direction">
-            <option value="EUR_TO_BGN">EUR → BGN</option>
-            <option value="BGN_TO_EUR">BGN → EUR</option>
+            <option value="EUR_TO_BGN">Евро → Лева</option>
+            <option value="BGN_TO_EUR">Лева → Евро</option>
         </select>
 
-        <button type="submit">Convert</button>
+        <button type="submit">Конвертирай</button>
     </form>
 
     <div id="result" class="result"></div>
 
     <div class="rate">
-        Fixed rate: 1 EUR = 1.95583 BGN
+        Фиксиран курс: 1 EUR = 1.95583 BGN
     </div>
 
     <footer>
@@ -44,8 +42,6 @@
     </footer>
 </div>
 
-<!-- Link external JS -->
 <script src="script.js"></script>
-
 </body>
 </html>

@@ -6,19 +6,25 @@ const directionSelect = document.getElementById("direction");
 const resultDiv = document.getElementById("result");
 
 form.addEventListener("submit", function (e) {
-    e.preventDefault(); // stop page reload
+    e.preventDefault();
 
     const amount = parseFloat(amountInput.value);
 
     if (isNaN(amount) || amount <= 0) {
-        resultDiv.textContent = "Please enter a valid amount.";
+        resultDiv.textContent = "Моля, въведете валидна сума.";
         return;
     }
 
-    const result =
-        directionSelect.value === "EUR_TO_BGN"
-            ? amount * RATE
-            : amount / RATE;
+    let result, currency;
 
-    resultDiv.textContent = result.toFixed(2);
+    if (directionSelect.value === "EUR_TO_BGN") {
+        result = amount * RATE;
+        currency = "лв.";
+    } 
+    else {
+        result = amount / RATE;
+        currency = "€";
+    }
+
+    resultDiv.textContent = `${result.toFixed(2)} ${currency}`;
 });
